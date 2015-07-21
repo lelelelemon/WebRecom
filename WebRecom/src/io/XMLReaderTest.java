@@ -29,7 +29,7 @@ public class XMLReaderTest {
 
 	}
 
-	public Map<String, String> readXMLString(String filename) {
+	public static Map<String, String> readXMLString(String filename) {
 		Map<String, String> property;
 		property = new HashMap<String, String>();
 		Element element = null;
