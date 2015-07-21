@@ -1,6 +1,8 @@
 package io;
 
 import java.io.File;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,9 +14,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import date.DateUtil;
+
 public class XMLReaderTest {
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws ParseException {
 		// Map<String, Integer> job_conf = new XMLReaderTest()
 		// .readXML("job_configure.xml");
 		// // System.out.println(job_conf.size());
@@ -24,6 +28,7 @@ public class XMLReaderTest {
 				.readXMLString("history.xml");
 		for (String key : failure_conf.keySet()) {
 			String value = failure_conf.get(key);
+			Date date = DateUtil.parse(value);
 			System.out.println(key + " " + value);
 		}
 

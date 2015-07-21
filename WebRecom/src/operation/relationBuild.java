@@ -10,6 +10,7 @@ import java.util.Map;
 import relation.Relation;
 import browse.BrowserHis;
 import code.CodeHis;
+import dao.Dao;
 import date.DateUtil;
 
 public class relationBuild {
@@ -64,6 +65,13 @@ public class relationBuild {
 	}
 
 	public List<BrowserHis> retrieveRecom(CodeHis code) {
+		String codeHisId = code.getId();
+		//List<Relation> relations = extractRelationByCodeId(codeHisId);
+		for(Relation rela: relations){
+			String id = rela.getBrowerHis_id();
+			
+		}
+		
 		return null;
 	}
 }
